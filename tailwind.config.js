@@ -6,7 +6,14 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: '"SF PRO DISPLAY", -apple-system, BlinkMacSystemFont'
+      },
+      colors: {
+        background: '#000212',
+      },
+    }
   },
   plugins: [],
 }
