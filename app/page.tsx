@@ -1,4 +1,5 @@
 import Container from "../components/container";
+import { Hero, HeroSubtitle, HeroTitle } from "../components/hero";
 
 export default function Homepage() {
   return (
@@ -7,7 +8,17 @@ export default function Homepage() {
         <Container>header</Container>
       </header>
       <main>
-       <Container> Linear</Container>
+       <Container>
+        <Hero>
+          <HeroTitle>
+            Linear is wa better way<br /> to build products
+          </HeroTitle>
+          <HeroSubtitle>
+            Lorem Ipsum is simply dummy text <br />
+            of the printing and typesetting industry.
+          </HeroSubtitle>
+          <img src="/img/hero.webp" alt="Hero image"/>
+        </Hero></Container>
       </main>
       <footer>
         <Container>Footer</Container>
