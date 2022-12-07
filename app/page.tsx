@@ -3,11 +3,7 @@ import { Hero, HeroSubtitle, HeroTitle } from "../components/hero";
 
 export default function Homepage() {
   return (
-    <div>
-      <header>
-        <Container>header</Container>
-      </header>
-      <main>
+    
        <Container>
         <Hero>
           <HeroTitle>
@@ -19,10 +15,6 @@ export default function Homepage() {
           </HeroSubtitle>
           <img src="/img/hero.webp" alt="Hero image"/>
         </Hero></Container>
-      </main>
-      <footer>
-        <Container>Footer</Container>
-      </footer>
-    </div>
+      
   )
 }

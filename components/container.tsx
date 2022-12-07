@@ -1,7 +1,9 @@
-import React from 'react'
+import classNames from "classnames"
 
-export default function Container({children}: {children: React.ReactNode}) {
+export default function Container({children, className}: {children: React.ReactNode, className?: string}) {
   return (
-    <div className='max-w-[120rem] mx-auto'>{children}</div>
+    <div className={classNames('max-w-[120rem] mx-auto')}>
+      {children}
+    </div>
   )
 }
