@@ -9,18 +9,20 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <head />
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+      </head>
       <body>
       <div>
       <Header />
-      <main className='pt-[var(--navigation-height)]'>
+      <main className='pt-navigation-height'>
         {children}
         </main>
       <footer>
         <Container>Footer</Container>
       </footer>
-    </div>
-    </body>
+      </div>
+      </body>
     </html>
   )
 }

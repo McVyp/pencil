@@ -7,7 +7,7 @@ export default function Homepage() {
        <Container>
         <Hero>
           <HeroTitle>
-            Linear is wa better way<br /> to build products
+            Linear is a better way<br /> to build products
           </HeroTitle>
           <HeroSubtitle>
             Lorem Ipsum is simply dummy text <br />
