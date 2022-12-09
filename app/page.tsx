@@ -14,7 +14,8 @@ export default function Homepage() {
             of the printing and typesetting industry.
           </HeroSubtitle>
           <img src="/img/hero.webp" alt="Hero image"/>
-        </Hero></Container>
+        </Hero>
+      </Container>
       
   )
 }
