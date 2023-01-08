@@ -11,7 +11,22 @@ import classNames from "classnames";
 export const Header = () => {
   const [hamburgerMenuIsOpen, setHambugerMenuIsOpen] = useState(false);
 
+  // stopping scroll while the hamburger menu is open
+  useEffect(() => {
+      const html =document.querySelector('html')
+      if(html) html.classList.toggle("overflow-hidden", hamburgerMenuIsOpen);
+  }, [hamburgerMenuIsOpen]);
 
+  useEffect(() =>{
+    const closeHamburgerMenuIsOpen = () => setHambugerMenuIsOpen(false)
+    window.addEventListener("orientationchange", closeHamburgerMenuIsOpen)
+    window.addEventListener('resize', closeHamburgerMenuIsOpen)
+
+    return () =>{
+      window.removeEventListener("orientationchange", closeHamburgerMenuIsOpen);
+      window.removeEventListener("resize", closeHamburgerMenuIsOpen);
+    }
+  }, [setHambugerMenuIsOpen])
   return (
     <header className="fixed top-0 left-0 z-10 w-full border-b border-white-a08 backdrop-blur-[12px]">
       <Container className="flex h-navigation-height">

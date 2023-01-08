@@ -72,7 +72,7 @@ export const Footer = () => {
                             <ul>
                                 {item.links.map(link =>(
                                     <li key={link.title} className='[&_a]:last:mb-0'>
-                                        <Link href={link.href} className='text-gray hover:text-white mb-3 block transition-colors ease delay-200 duration-300'>
+                                        <Link href={link.href} className='text-gray hover:text-white mb-3 block transition-colors ease delay-50 duration-300'>
                                             {link.title}
                                         </Link>
                                     </li>

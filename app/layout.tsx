@@ -16,7 +16,7 @@ export default function RootLayout({
       <body>
       <div>
       <Header />
-      <main className='pt-navigation-height'>
+      <main className='pt-navigation-height bg-page-gradient'>
         {children}
         </main>
       <Footer />
