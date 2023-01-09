@@ -9,14 +9,14 @@ interface HeroElementProps {
 
 export function HeroTitle({children}: HeroElementProps) {
   return (
-    <h2 className='md:text-8xl text-6xl my-6'>{children}</h2>
+    <h2 className='text-gradient md:text-8xl text-6xl my-6 '>{children}</h2>
    
   )
 }
 
 export function HeroSubtitle({children}: HeroElementProps) {
     return (
-    <p className='text-lg md:text-xl mb-12'>{children}</p>
+    <p className='text-lg md:text-xl mb-12 text-primary-text'>{children}</p>
     )
 }
 

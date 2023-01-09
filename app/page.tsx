@@ -10,7 +10,7 @@ export default function Homepage() {
             Linear is a better way<br className="hidden md:block"/> to build products
           </HeroTitle>
           <HeroSubtitle>
-            Lorem Ipsum is simply dummy text <br />
+            Lorem Ipsum is simply dummy text <br className="hidden md:block"/>
             of the printing and typesetting industry.
           </HeroSubtitle>
           <img src="/img/hero.webp" alt="Hero image"/>
