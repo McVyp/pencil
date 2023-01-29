@@ -51,11 +51,11 @@ const footerLinks =[
 
 export const Footer = () => {
   return (
-    <footer className='mt-12 border-t border-white-a08 py-[5.6rem] text-md'>
+    <footer className='mt-12 border-t border-border-white py-[5.6rem] text-md'>
         <Container className='flex flex-col md:flex-row justify-between'>
             <div>
                 <div className='flex h-full flex-row justify-between lg:flex-col'>
-                    <div className= ' flex items-center text-gray hover:text-white transition ease cursor-pointer'>
+                    <div className= ' flex items-center text-gray hover:text-offWhite transition ease cursor-pointer'>
                         <Logo className='h-4 w-4 mr-4'/> Linear -Designed worldwide
                     </div>
                     <div className='mt-auto flex space-x-4 text-gray items-center cursor-pointer'>
@@ -72,7 +72,7 @@ export const Footer = () => {
                             <ul>
                                 {item.links.map(link =>(
                                     <li key={link.title} className='[&_a]:last:mb-0'>
-                                        <Link href={link.href} className='text-gray hover:text-white mb-3 block transition-colors ease delay-50 duration-300'>
+                                        <Link href={link.href} className='text-gray hover:text-off-white mb-3 block transition-colors ease delay-50 duration-300'>
                                             {link.title}
                                         </Link>
                                     </li>

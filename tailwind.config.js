@@ -27,11 +27,12 @@ module.exports = {
       colors: {
         transparent: 'transparent',
         white: "#fff",
-        "white-a08":"rgba(255, 255, 255, 0.08)",
+        "off-white": '#f7f8f8',
         background: "#000212",
         gray:'#858699',
         'gray-dark': '#222326',
-        'primary-text':'#b4bcd0'
+        'primary-text':'#b4bcd0',
+        "border-white":"rgba(255, 255, 255, 0.08)",
       },
       spacing:{
         0:  '0',

@@ -28,7 +28,7 @@ export const Header = () => {
     }
   }, [setHambugerMenuIsOpen])
   return (
-    <header className="fixed top-0 left-0 z-10 w-full border-b border-white-a08 backdrop-blur-[12px]">
+    <header className="fixed top-0 left-0 z-10 w-full border-b border-border-white backdrop-blur-[12px]">
       <Container className="flex h-navigation-height">
         <Link className="flex items-center text-lg" href="/">
           <Logo className="mr-4 h-[1.8rem] w-[1.8rem]" /> Linear
@@ -50,7 +50,7 @@ export const Header = () => {
           >
             <ul
               className={classNames(
-                "flex h-full flex-col md:flex-row md:items-center [&_li]:ml-6 [&_li]:border-b [&_li]:border-white-a08 md:[&_li]:border-none",
+                "flex h-full flex-col md:flex-row md:items-center [&_li]:ml-6 [&_li]:border-b [&_li]:border-border-white md:[&_li]:border-none",
                 "ease-in [&_a]:flex [&_a]:h-navigation-height [&_a]:w-full [&_a]:translate-y-8 [&_a]:items-center [&_a]:text-lg [&_a]:transition-[color,transform] [&_a]:duration-300 md:[&_a]:translate-y-0 md:[&_a]:text-md [&_a]:md:transition-colors [&_a:hover]:text-grey",
                 hamburgerMenuIsOpen && "[&_a]:translate-y-0"
               )}
