@@ -32,7 +32,6 @@ export default function Homepage() {
             Get Started <IconWrapper><ChevronIcon /></IconWrapper>
           </Button>
           <img src="/img/hero.webp"  className="mt-[12.0rem]" alt="Hero image"/>
-          <div className="animation-fade-in">ok</div>
         </Hero>
       </Container>
       
