@@ -69,7 +69,7 @@ module.exports = {
         },
       },
       animation: {
-        "fade-in": "fade-in 1000ms 0s ease"
+        "fade-in": "fade-in 1000ms var(--animation-delay, 0ms) ease forwards"
       }
   },
   plugins: [],
