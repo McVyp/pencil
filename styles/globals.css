@@ -25,19 +25,13 @@
     }
 }
 
-/* ::-webkit-scrollbar {
-  width: 10px;
+@keyframes herofade {
+  from{
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 0;
+    transform: none;
+  }
 }
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888;
-  cursor: pointer;
-  border-radius: 5px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-} */

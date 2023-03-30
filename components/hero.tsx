@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import React from 'react'
 interface HeroProps {
     children: React.ReactNode;
@@ -5,18 +6,19 @@ interface HeroProps {
 
 interface HeroElementProps {
     children: React.ReactNode;
+    className?: string;
 }
 
-export function HeroTitle({children}: HeroElementProps) {
+export function HeroTitle({children, className}: HeroElementProps) {
   return (
-    <h2 className='text-gradient md:text-8xl text-6xl my-6 '>{children}</h2>
+    <h2 className={classNames('text-gradient md:text-8xl text-6xl my-6 ', className)}>{children}</h2>
    
   )
 }
 
-export function HeroSubtitle({children}: HeroElementProps) {
+export function HeroSubtitle({children, className}: HeroElementProps) {
     return (
-    <p className='text-lg md:text-xl mb-12 text-primary-text'>{children}</p>
+    <p className={classNames('text-lg md:text-xl mb-12 text-primary-text', className)}>{children}</p>
     )
 }
 
