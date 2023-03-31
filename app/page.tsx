@@ -7,7 +7,7 @@ import { ChevronIcon } from "../components/icons/chevron";
 export default function Homepage() {
   return (
     
-       <Container className="pt-[6.4rem]">
+       <Container className="py-[6.4rem] overflow-hidden">
         <Hero>
           <Button 
             className="animate-fade-in opacity-0 translate-y-[-1rem]"
@@ -35,6 +35,7 @@ export default function Homepage() {
           <HeroImage />
         </Hero>
       </Container>
+      
       
   )
 }
