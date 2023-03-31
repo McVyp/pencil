@@ -91,12 +91,20 @@ module.exports = {
           "100%":{
             opacity: 0.2
           },
+        },
+        "sketch-lines": {
+          "0%": {'stroke-dashoffset': 1},
+          "50%": {'stroke-dashoffset':0},
+          "99%":{ 'stroke-dashoffset':0},
+          "100%":{ visibilty: "hidden" },
+
         }
       },
       animation: {
         "fade-in": "fade-in 1000ms var(--animation-delay, 0ms) ease forwards",
         "image-rotate": "image-rotate 1400ms forwards",
         "image-glow": "image-glow 4100ms 600ms ease-out forwards",
+        "sketch-lines": "sketch-lines 1200ms ease-out forwards"
       }
   },
   plugins: [],
