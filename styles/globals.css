@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar { 
+  width: 0 !important;
+  display: none; 
+}
 @layer base {
 :root {
   --navigation-height: 4.8rem;
