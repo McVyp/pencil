@@ -1,21 +1,21 @@
-import { AlanLogo } from "./logos/alan";
-import { ArcLogo } from "./logos/arc";
-import { CashAppLogo } from "./logos/chasapp";
-import { DescriptLogo } from "./logos/descript";
-import { LoomLogo } from "./logos/loom";
-import { MercuryLogo } from "./logos/mercury";
-import { OpenSeaLogo } from "./logos/opensea";
-import { PitchLogo } from "./logos/pitch";
-import { RampLogo } from "./logos/ramp";
-import { RaycastLogo } from "./logos/raycast";
-import { RetoolLogo } from "./logos/retool";
-import { VercelLogo } from "./logos/vercel";
+import { AlanLogo } from "../logos/alan";
+import { ArcLogo } from "../logos/arc";
+import { CashAppLogo } from "../logos/chasapp";
+import { DescriptLogo } from "../logos/descript";
+import { LoomLogo } from "../logos/loom";
+import { MercuryLogo } from "../logos/mercury";
+import { OpenSeaLogo } from "../logos/opensea";
+import { PitchLogo } from "../logos/pitch";
+import { RampLogo } from "../logos/ramp";
+import { RaycastLogo } from "../logos/raycast";
+import { RetoolLogo } from "../logos/retool";
+import { VercelLogo } from "../logos/vercel";
 
-export const Clients =() => 
+export const Clients =() => (
     <>
         <p className="text-lg md:text-xl text-white text-center mb-12">
             <span className="text-primary-text">
-                Power the world&apos;s best product teams,
+                Power the world&apos;s best product teams.
                 <br className="hidden md:block"/> 
                 From next-gen startups to established enterprises.
             </span>
@@ -35,3 +35,4 @@ export const Clients =() =>
             <MercuryLogo className="hidden  md:block" />
         </div>
     </>
+)
