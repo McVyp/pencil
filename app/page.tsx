@@ -42,14 +42,15 @@ export default function Homepage() {
     </div>
       <Container>
         <Clients />
-        <div className={classNames(
-          "h-[60rem] my-[-12.8rem] relative overflow-hidden", 
+      </Container>
+      <div 
+          className={classNames(
+          "h-[60rem] my-[-12.8rem] relative overflow-hidden mask-radial-faded", 
           "before:absolute before:opacity-[0.4] before:bg-radial-faded [--color:#7877C6] before:inset-0",
           "after:absolute after:bg-background after:rounded-[50%] after:border-t after:border-[rgba(120,_119,_198,_0.4)] after:top-1/2 after:-left-1/2 after:w-[200%] after:h-[142.8%]"
           )}>
           <StarsIllustration />
-        </div>
-      </Container>
+      </div>
       
     </>
   )

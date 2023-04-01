@@ -27,6 +27,9 @@
       background-clip: text;
       color: transparent;
     }
+    .mask-radial-faded {
+      mask-image: radial-gradient(circle at center center, black, transparent 80%)
+    }
 }
 
 @keyframes herofade {
