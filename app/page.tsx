@@ -1,4 +1,5 @@
 import { Button, IconWrapper } from "../components/button";
+import { Clients } from "../components/client";
 import Container from "../components/container";
 import { Hero, HeroSubtitle, HeroTitle } from "../components/hero";
 import { HeroImage } from "../components/hero-image";
@@ -6,13 +7,14 @@ import { ChevronIcon } from "../components/icons/chevron";
 
 export default function Homepage() {
   return (
-    
-       <Container className="py-[6.4rem] overflow-hidden">
+    <>
+      <div className="overflow-hidden pb-[16.4rem] md:pb-[25.6rem]">
+       <Container className="pt-[6.4rem]">
         <Hero>
           <Button 
             className="animate-fade-in opacity-0 translate-y-[-1rem]"
             href="/" 
-            variant="secondary" 
+            variant="secondary"
             size="small"
           >
             Linear 2022 - Release - Built for scale <IconWrapper>→</IconWrapper>
@@ -35,7 +37,11 @@ export default function Homepage() {
           <HeroImage />
         </Hero>
       </Container>
+    </div>
+      <Container>
+        <Clients />
+      </Container>
       
-      
+    </>
   )
 }
