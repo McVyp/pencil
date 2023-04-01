@@ -73,8 +73,9 @@ export const HeroImage =() => {
                                         } as CSSProperties
                                     }
                                     className={classNames('bg-glow-lines block absolute top-0 w-[10rem] h-[1px]',
-                                    line.direction === "to right" && `w-[calc(var(--size)*1rem)] h-[1px] left-0 animate-glow-line-horizontal`,
-                                    line.direction === "to bottom" && `h-[calc(var(--size)*1rem)] w-[1px] right-0 animate-glow-line-vertical`,
+                                    line.direction === "to right" && `left-0 h-[1px] w-[calc(var(--size)*0.5rem)] animate-glow-line-horizontal md:w-[calc(var(--size)*1rem)]`,
+                                    
+                                    line.direction === "to bottom" && `right-0 h-[calc(var(--size)*0.5rem)] w-[1px] animate-glow-line-vertical md:h-[calc(var(--size)*1rem)]`,
                                     )}
                                 />
                             ))}
