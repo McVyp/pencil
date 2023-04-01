@@ -1,9 +1,11 @@
+import classNames from "classnames";
 import { Button, IconWrapper } from "../components/button";
 import { Clients } from "../components/client";
 import Container from "../components/container";
 import { Hero, HeroSubtitle, HeroTitle } from "../components/hero";
 import { HeroImage } from "../components/hero-image";
 import { ChevronIcon } from "../components/icons/chevron";
+import { StarsIllustration } from "../components/icons/stars";
 
 export default function Homepage() {
   return (
@@ -40,6 +42,13 @@ export default function Homepage() {
     </div>
       <Container>
         <Clients />
+        <div className={classNames(
+          "h-[60rem] my-[-12.8rem] relative overflow-hidden", 
+          "before:absolute before:opacity-[0.4] before:bg-radial-faded [--color:#7877C6] before:inset-0",
+          "after:absolute after:bg-background after:rounded-[50%] after:border-t after:border-[rgba(120,_119,_198,_0.4)] after:top-1/2 after:-left-1/2 after:w-[200%] after:h-[142.8%]"
+          )}>
+          <StarsIllustration />
+        </div>
       </Container>
       
     </>
