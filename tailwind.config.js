@@ -48,6 +48,8 @@ module.exports = {
         10: '4rem',
         11: '4.4rem',
         12: '4.8rem',
+        13: '5.2rem',
+        14: '5.6rem',
         'navigation-height': 'var(--navigation-height)',
       },
       backgroundImage:{
@@ -63,7 +65,10 @@ module.exports = {
           "linear-gradient(var(--direction),#9d9bf2 0.43%,#7877c6 14.11%,rgba(120,119,198,0) 62.95%)",
         "radial-faded":
         "radial-gradient(circle at bottom center,var(--color),transparent 70%)",
+        "glass-gradient":
+        "linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.05) 100%)",
       },
+      
       boxShadow:{
         primary: "rgb(80 63 205) 0px 1px 40px"
       },
