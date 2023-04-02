@@ -30,15 +30,8 @@
     .mask-radial-faded {
       mask-image: radial-gradient(circle at center center, black, transparent 80%)
     }
-}
 
-@keyframes herofade {
-  from{
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 0;
-    transform: none;
-  }
+    .mask-linear-faded{
+      mask-image: linear-gradient(black, transparent 70%)
+    }
 }
