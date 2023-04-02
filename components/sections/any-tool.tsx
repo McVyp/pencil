@@ -12,14 +12,14 @@ export const UnlikeAnyTool =() =>(
             Designed to the last pixel and engineered with unforgiving precision, Linear combines UI elegance with world-class performance.
             </p>
         </div>
-        <div className="flex flex-wrap gap-6">
-            <div className="bg-glass-gradient p-8 md:p-14 border border-transparent-white rounded-[4.8rem] basis-[calc(66.66%-12px)] text-center min-h-[48rem] flex flex-col justify-end items-center">
+        <div className="flex md:flex-wrap gap-6 overflow-x-auto snap-x snap-mandatory">
+            <div className="bg-glass-gradient p-8 md:p-14 border border-transparent-white rounded-[4.8rem] md:basis-[calc(66.66%-12px)] text-center min-h-[48rem] flex flex-col justify-end items-center w-full shrink-0 snap-center">
                 <p className="text-3xl">Built for your keyboard</p>
                 <p className="text-md text-primary-text">
                     Fly through your tasks with rapid-fire keyboard shortcuts for everything. Literally everything.
                 </p>
             </div>
-            <div className="bg-glass-gradient p-8 md:p-14 border border-transparent-white rounded-[4.8rem] basis-[calc(33.33%-12px)] text-center relative min-h-[48rem] flex flex-col justify-end items-center">
+            <div className="bg-glass-gradient p-8 md:p-14 border border-transparent-white rounded-[4.8rem] md:basis-[calc(33.33%-12px)] text-center relative min-h-[48rem] flex flex-col justify-end items-center w-full shrink-0 snap-center">
                 <div className="absolute top-[-9.2rem] mask-linear-faded">
                     <ZapIcon />
                 </div>
@@ -28,7 +28,7 @@ export const UnlikeAnyTool =() =>(
                     Built for speed with 50ms interactions and real-time sync.
                 </p>
             </div>
-            <div className="bg-glass-gradient p-8 md:p-14 border border-transparent-white rounded-[4.8rem] basis-[calc(33.33%-12px)] text-center min-h-[48rem] flex flex-col justify-end relative items-center group">
+            <div className="bg-glass-gradient p-8 md:p-14 border border-transparent-white rounded-[4.8rem] md:basis-[calc(33.33%-12px)] text-center min-h-[48rem] flex flex-col justify-end relative items-center group w-full shrink-0 snap-center">
                 <div className="absolute top-[-8rem] w-[130%] pointer-events-none">
                     <LogoLight />
                 </div>
@@ -55,7 +55,7 @@ export const UnlikeAnyTool =() =>(
                     </svg>
                 </Button>
             </div>
-            <div className="bg-glass-gradient p-8 md:p-14 border border-transparent-white rounded-[4.8rem] basis-[calc(66.66%-12px)] text-center min-h-[48rem] flex flex-col justify-end items-center">
+            <div className="bg-glass-gradient p-8 md:p-14 border border-transparent-white rounded-[4.8rem] md:basis-[calc(66.66%-12px)] text-center min-h-[48rem] flex flex-col justify-end items-center w-full shrink-0 snap-center">
                 <p className="text-3xl">Meet your command line</p>
                 <p className="text-md text-primary-text">
                     Complete any action in seconds with the global command menu.
