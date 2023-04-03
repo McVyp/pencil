@@ -15,8 +15,7 @@ export const UnlikeAnyTool =() =>(
                 Designed to the last pixel and engineered with unforgiving precision, Linear combines UI elegance with world-class performance.
                 </p>
             </div>
-        </Container>
-        <div className="h-[48rem] overflow-hidden md:h-auto md:overflow-auto">
+            <div className="h-[48rem] overflow-hidden md:h-auto md:overflow-auto">
             <div className="flex md:flex-wrap gap-6 overflow-x-auto snap-x snap-mandatory pb-12 px-8">
                 <div className="bg-glass-gradient p-8 md:p-14 border border-transparent-white rounded-[4.8rem] md:basis-[calc(66.66%-12px)] text-center min-h-[48rem] flex flex-col justify-end items-center w-full shrink-0 snap-center">
                     <Keyboard />
@@ -34,7 +33,7 @@ export const UnlikeAnyTool =() =>(
                         Built for speed with 50ms interactions and real-time sync.
                     </p>
                 </div>
-                <div className="bg-glass-gradient p-8 md:p-14 border border-transparent-white rounded-[4.8rem] md:basis-[calc(33.33%-12px)] text-center min-h-[48rem] flex flex-col justify-end relative items-center group w-full shrink-0 snap-center overflow-hidden">
+                <div className="group relative flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end overflow-hidden rounded-[4.8rem] border border-transparent-white bg-glass-gradient p-8 text-center md:basis-[calc(33.33%-12px)] md:p-14">
                     <div className="absolute top-[-8rem] w-[130%] pointer-events-none">
                         <LogoLight />
                     </div>
@@ -69,5 +68,7 @@ export const UnlikeAnyTool =() =>(
                 </div>
             </div>
         </div>
+        </Container>
+        
     </div>
 )
