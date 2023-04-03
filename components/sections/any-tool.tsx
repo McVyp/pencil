@@ -2,6 +2,7 @@ import { Button, Highlight } from "../button";
 import Container from "../container";
 import { LogoLight } from "../illustrations/light";
 import { ZapIcon } from "../illustrations/zap";
+import { Keyboard } from "../keyboard-illustration";
 
 export const UnlikeAnyTool =() =>(
     <div className="text-white">
@@ -18,6 +19,7 @@ export const UnlikeAnyTool =() =>(
         <div className="h-[48rem] overflow-hidden md:h-auto md:overflow-auto">
             <div className="flex md:flex-wrap gap-6 overflow-x-auto snap-x snap-mandatory pb-12 px-8">
                 <div className="bg-glass-gradient p-8 md:p-14 border border-transparent-white rounded-[4.8rem] md:basis-[calc(66.66%-12px)] text-center min-h-[48rem] flex flex-col justify-end items-center w-full shrink-0 snap-center">
+                    <Keyboard />
                     <p className="text-3xl mb-4">Built for your keyboard</p>
                     <p className="text-md text-primary-text">
                         Fly through your tasks with rapid-fire keyboard shortcuts for everything. Literally everything.
