@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ::-webkit-scrollbar { 
+::-webkit-scrollbar { 
   width: 0 !important;
   display: none; 
-} */
+}
 
 @layer base {
 :root {

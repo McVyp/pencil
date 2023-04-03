@@ -12,7 +12,7 @@ export const HomepageHero =() =>(
             variant="secondary"
             size="small"
           >
-            <span>Linear 2022 - Release - Built for scale</span>{" "}<Highlight>→</Highlight>
+            <span>Introducing Linear Insights</span>{" "}<Highlight>→</Highlight>
           </Button>
           <HeroTitle className="animate-fade-in [--animation-delay:200ms] opacity-0 translate-y-[-1rem] ">
             Linear is a better way<br className="hidden md:block"/> to build products
