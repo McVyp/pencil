@@ -23,7 +23,9 @@ export const Keyboard =() => {
 
     const wrapperRef = useRef<HTMLDivElement>(null);
 
-    const onButtonClick = (ev: React.MouseEvent<HTMLButtonElement>) =>{
+    const illustrationWrapperRef = useRef<HTMLDivElement>(null);
+
+    const onButtonClick = (ev: React.MouseEvent<HTMLButtonElement>, keys: string) =>{
         ev.preventDefault();
         if(!wrapperRef.current) return;
         
@@ -31,14 +33,25 @@ export const Keyboard =() => {
             left: ev.currentTarget.offsetLeft - wrapperRef.current.clientWidth / 2,
             behavior: "smooth"
         });
+
+        if(!illustrationWrapperRef.current) return;
+
+        illustrationWrapperRef.current.querySelectorAll('.active').forEach(el => el.classList.remove("active"));
+        
+        const keyArray = keys.split("");
+        const keyElements = keyArray.map((key) => illustrationWrapperRef.current?.querySelector(`[data-key="${key}"]`))
+
+        keyElements.forEach((element) => element?.classList.add("active"))
     }
 
     return (
         <>
-            <div className="mask-keyboard h-full w-full">
+            <div
+                ref={illustrationWrapperRef} 
+                className="mask-keyboard h-full w-full">
                 <KeyboardIllustration />
             </div>
-            <div className="overflow-hidden min-h-[4rem] mb-8 w-full">
+            <div className="overflow-hidden min-h-[4rem] mb-8 w-full my-7">
                 <div
                     ref={wrapperRef}
                     className="flex overflow-auto max-w-full h-[6rem] gap-2 mask-keyboardtexts snap-x snap-mandatory pb-8">
@@ -46,12 +59,16 @@ export const Keyboard =() => {
                         shortcuts.map((shortcut) => (
                             <Button
                                 key={shortcut.text}
-                                onClick={onButtonClick} 
+                                onClick={(ev) =>onButtonClick(ev, shortcut.keys)} 
                                 className="shrink-0 snap-center last:mr-[50vw] first:ml-[50vw]"
                                 href="" 
                                 variant = "secondary"
                             >
-                                <Highlight>{shortcut.keys}</Highlight>
+                                <Highlight
+                                    className="uppercase"
+                                >
+                                    {shortcut.keys}
+                                </Highlight>
                                 {shortcut.text}
                             </Button>
                         ))
