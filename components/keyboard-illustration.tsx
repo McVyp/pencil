@@ -1,5 +1,6 @@
 'use client'
 
+import { useRef } from "react";
 import { Button, Highlight } from "./button"
 import { KeyboardIllustration } from "./illustrations/keyboard"
 
@@ -19,19 +20,34 @@ const shortcuts = [
   ];
 
 export const Keyboard =() => {
+
+    const wrapperRef = useRef<HTMLDivElement>(null);
+
+    const onButtonClick = (ev: React.MouseEvent<HTMLButtonElement>) =>{
+        ev.preventDefault();
+        if(!wrapperRef.current) return;
+        
+        wrapperRef.current.scrollTo({
+            left: ev.currentTarget.offsetLeft - wrapperRef.current.clientWidth / 2,
+            behavior: "smooth"
+        });
+    }
+
     return (
         <>
             <div className="mask-keyboard h-full w-full">
                 <KeyboardIllustration />
             </div>
             <div className="overflow-hidden min-h-[4rem] mb-8 w-full">
-                <div className="flex overflow-auto max-w-full h-[6rem] gap-2 mask-keyboardtexts snap-x snap-mandatory pb-8">
+                <div
+                    ref={wrapperRef}
+                    className="flex overflow-auto max-w-full h-[6rem] gap-2 mask-keyboardtexts snap-x snap-mandatory pb-8">
                     {
                         shortcuts.map((shortcut) => (
                             <Button
                                 key={shortcut.text}
-                                onClick={() => {}} 
-                                className="shrink-0 snap-center"
+                                onClick={onButtonClick} 
+                                className="shrink-0 snap-center last:mr-[50vw] first:ml-[50vw]"
                                 href="" 
                                 variant = "secondary"
                             >
