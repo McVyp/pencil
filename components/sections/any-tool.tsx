@@ -17,7 +17,7 @@ export const UnlikeAnyTool =() =>(
             </div>
             <div className="h-[48rem] overflow-hidden md:h-auto md:overflow-auto">
             <div className="flex md:flex-wrap gap-6 overflow-x-auto snap-x snap-mandatory pb-12 px-8">
-                <div className="bg-glass-gradient p-8 md:p-14 border border-transparent-white rounded-[4.8rem] md:basis-[calc(66.66%-12px)] text-center min-h-[48rem] flex flex-col justify-end items-center w-full shrink-0 snap-center">
+                <div className="bg-glass-gradient p-8 md:p-14 border border-transparent-white rounded-[4.8rem] md:basis-[calc(66.66%-12px)] md:max-w-[calc(66.66%-12px)] text-center min-h-[48rem] flex flex-col justify-end items-center w-full shrink-0 snap-center">
                     <Keyboard />
                     <p className="text-3xl mb-4">Built for your keyboard</p>
                     <p className="text-md text-primary-text">
@@ -60,7 +60,7 @@ export const UnlikeAnyTool =() =>(
                         </svg>
                     </Button>
                 </div>
-                <div className="bg-glass-gradient p-8 md:p-14 border border-transparent-white rounded-[4.8rem] md:basis-[calc(66.66%-12px)] text-center min-h-[48rem] flex flex-col justify-end items-center w-full shrink-0 snap-center">
+                <div className="bg-glass-gradient p-8 md:p-14 border border-transparent-white rounded-[4.8rem] md:basis-[calc(66.66%-12px)] text-center min-h-[48rem] flex flex-col justify-end items-center w-full shrink-0 snap-center md:max-w-[calc(66.66%-12px)]">
                     <p className="text-3xl mb-4">Meet your command line</p>
                     <p className="text-md text-primary-text">
                         Complete any action in seconds with the global command menu.

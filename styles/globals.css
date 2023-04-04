@@ -39,4 +39,8 @@
     .mask-keyboard {
       mask-image: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.57) 33.98%, black 100%);
     }
+
+    .mask-keyboardtexts {
+      mask-image: linear-gradient(to right, transparent, black 40%, black calc(60%), transparent 100%);
+    }
 }
