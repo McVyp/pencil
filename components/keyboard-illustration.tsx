@@ -48,10 +48,10 @@ export const Keyboard =() => {
         <>
             <div
                 ref={illustrationWrapperRef} 
-                className="mask-keyboard h-full w-full">
+                className="mask-keyboard max-h-[30rem] w-[200%] h-full md:w-full absolute md:relative top-0 left-12 md:left-auto">
                 <KeyboardIllustration />
             </div>
-            <div className="overflow-hidden h-[4rem] min-h-[4rem] mb-8 w-full my-7">
+            <div className="overflow-hidden hidden md:block h-[4rem] min-h-[4rem] mb-8 w-full my-7">
                 <div
                     ref={wrapperRef}
                     className="flex overflow-auto md:overflow-hidden max-w-full h-[4rem] gap-2 mask-keyboardtexts snap-x snap-mandatory pb-8 over">
