@@ -51,18 +51,18 @@ export const Keyboard =() => {
                 className="mask-keyboard h-full w-full">
                 <KeyboardIllustration />
             </div>
-            <div className="overflow-hidden min-h-[4rem] mb-8 w-full my-7">
+            <div className="overflow-hidden h-[4rem] min-h-[4rem] mb-8 w-full my-7">
                 <div
                     ref={wrapperRef}
-                    className="flex overflow-auto max-w-full h-[6rem] gap-2 mask-keyboardtexts snap-x snap-mandatory pb-8">
+                    className="flex overflow-auto md:overflow-hidden max-w-full h-[4rem] gap-2 mask-keyboardtexts snap-x snap-mandatory pb-8 over">
                     {
                         shortcuts.map((shortcut) => (
                             <Button
                                 key={shortcut.text}
-                                onClick={(ev: React.MouseEvent<HTMLButtonElement, MouseEvent>) => onButtonClick(ev, shortcut.keys)}
+                                // onClick={(ev: React.MouseEvent<HTMLButtonElement, MouseEvent>) => onButtonClick(ev, shortcut.keys)}
                                 // onClick={(ev) =>onButtonClick(ev, shortcut.keys)} 
                                 className="shrink-0 snap-center last:mr-[50vw] first:ml-[50vw]"
-                                href="" 
+                                href="#" 
                                 variant = "secondary"
                             >
                                 <Highlight
