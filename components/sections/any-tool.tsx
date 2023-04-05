@@ -42,7 +42,7 @@ export const UnlikeAnyTool =() =>(
                         Comes with built-in workflows that create focus and routine.
                     </p>
                     <Button 
-                        className="absolute bottom-[20rem] translate-y-[30%] scale-[0.8] opacity-0 transition-[transform,opacity] group-hover:transform-none group-hover:opacity-100 [&_.highlight]:text-[1.1rem]" 
+                        className="absolute top-[20rem] translate-y-[30%] scale-[0.8] opacity-0 transition-[transform,opacity] group-hover:transform-none group-hover:opacity-100 [&_.highlight]:text-[1.1rem]" 
                         variant="secondary" 
                         href="/"
                         size="small"
