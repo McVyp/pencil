@@ -59,7 +59,8 @@ export const Keyboard =() => {
                         shortcuts.map((shortcut) => (
                             <Button
                                 key={shortcut.text}
-                                onClick={(ev) =>onButtonClick(ev, shortcut.keys)} 
+                                onClick={(ev: React.MouseEvent<HTMLButtonElement, MouseEvent>) => onButtonClick(ev, shortcut.keys)}
+                                // onClick={(ev) =>onButtonClick(ev, shortcut.keys)} 
                                 className="shrink-0 snap-center last:mr-[50vw] first:ml-[50vw]"
                                 href="" 
                                 variant = "secondary"
