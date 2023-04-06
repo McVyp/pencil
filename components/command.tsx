@@ -1,3 +1,6 @@
+"use client"
+import classNames from "classnames";
+import { useEffect, useRef, useState } from "react";
 import { AddLabels, AssignToIcon, BacklogIcon, ChangePriorityIcon, ChangeStatusIcon, DoneIcon, HighIcon, InProgressIcon, LabelIcon, LowIcon, MediumIcon, NoPriorityIcon, PersonIcon, TodoIcon, UrgentIcon } from "./icons/command";
 
 const commandOptions =[
@@ -88,8 +91,29 @@ const commandOptions =[
 ];
 
 export const CommandMenu = () => {
+
+    const commandMenuRef = useRef<HTMLDivElement>(null)
+    const [opened, setOpened] = useState(false);
+
+    useEffect(()=>{
+        const toggleCommandMenu = (e:MouseEvent) =>{
+            const clickedOutside = !commandMenuRef.current?.contains(e.target as Node)
+            setOpened(clickedOutside? false: true)
+        };
+
+        window.addEventListener('click',toggleCommandMenu);
+
+        return () =>{
+            window.removeEventListener('click',toggleCommandMenu);
+        }
+    },[])
     return (
-        <div className="rounded-lg bg-transparent-white border border-transparent-white w-[90vw] max-w-[64rem] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-start"
+        <div 
+            ref={commandMenuRef}
+            className={classNames("rounded-lg bg-transparent-white border border-transparent-white w-[90vw] max-w-[64rem] absolute left-1/2 -translate-x-1/2  flex flex-col items-start transition-[transform,opacity]",
+            opened && "-translate-y-[2.4rem] opacity-100 opened",
+            !opened && 'translate-y-[12.8rem] opacity-60'
+            )}
         >
             <span className="bg-white/[0.05] text-xs px-2 leading-10 text-white/50 ml-4 mt-2">
                 LIN-111 Walkway lightning
