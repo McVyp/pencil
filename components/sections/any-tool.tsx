@@ -1,4 +1,5 @@
 import { Button, Highlight } from "../button";
+import { CommandMenu } from "../command";
 import Container from "../container";
 import { LogoLight } from "../illustrations/light";
 import { ZapIcon } from "../illustrations/zap";
@@ -34,7 +35,7 @@ export const UnlikeAnyTool =() =>(
                     </p>
                 </div>
                 <div className="group relative flex min-h-[48rem] w-full shrink-0 snap-center flex-col items-center justify-end overflow-hidden rounded-[4.8rem] border border-transparent-white bg-glass-gradient p-8 text-center md:basis-[calc(33.33%-12px)] md:p-14">
-                    <div className="absolute top-[-8rem] w-[130%] pointer-events-none">
+                    <div className="absolute top-[-8rem] w-[130%] pointer-events-none flex justify-center">
                         <LogoLight />
                     </div>
                     <p className="text-3xl mb-4">Designed for modern software teams</p>
@@ -60,11 +61,12 @@ export const UnlikeAnyTool =() =>(
                         </svg>
                     </Button>
                 </div>
-                <div className="bg-glass-gradient p-8 md:p-14 border border-transparent-white rounded-[4.8rem] md:basis-[calc(66.66%-12px)] text-center min-h-[48rem] flex flex-col justify-end items-center w-full shrink-0 snap-center md:max-w-[calc(66.66%-12px)]">
+                <div className="bg-glass-gradient p-8 md:p-14 border border-transparent-white rounded-[4.8rem] md:basis-[calc(66.66%-12px)] text-center min-h-[48rem] flex flex-col justify-start items-center w-full shrink-0 snap-center md:max-w-[calc(66.66%-12px)] relative">
                     <p className="text-3xl mb-4">Meet your command line</p>
                     <p className="text-md text-primary-text">
                         Complete any action in seconds with the global command menu.
                     </p>
+                    {/* <CommandMenu /> */}
                 </div>
             </div>
         </div>
