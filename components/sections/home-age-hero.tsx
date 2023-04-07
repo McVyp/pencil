@@ -27,7 +27,7 @@ export const HomepageHero =() =>(
             variant="primary" 
             size="large"
           >
-            Get Started <Highlight><ChevronIcon /></Highlight>
+            Get Started<Highlight><ChevronIcon /></Highlight>
           </Button>
           <HeroImage />
         </Hero>
