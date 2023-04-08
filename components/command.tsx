@@ -54,7 +54,8 @@ export const CommandMenu = () => {
     useEffect(()=>{
         const toggleCommandMenu = (e:MouseEvent) =>{
             if(!commandMenuRef.current) return;
-            const isMenuButton = e.target instanceof Element && e.target.classList.contains("command-button")
+            const isMenuButton = 
+              e.target instanceof Element && e.target.classList.contains("command-button")
             const clickedOutside = !isMenuButton && !commandMenuRef.current?.contains(e.target as Node)
 
             setOpened(clickedOutside? false: true)
@@ -74,16 +75,18 @@ export const CommandMenu = () => {
 
     useEffect(()=>{
         if(!commandMenuRef.current) return;
-        commandMenuRef.current.classList.remove('animate-bounce');
+        commandMenuRef.current.classList.remove("animate-bounce");
         commandMenuRef.current.clientWidth;
-        commandMenuRef.current.classList.add('animate-bounce');
-    },[selectedOption]);
+        commandMenuRef.current.classList.add("animate-bounce");
+    }, [selectedOption]);
 
     return (
-        <div className={classNames(opened && 'opened')} ref={commandMenuRef}>
+        <div
+          ref={commandMenuRef}
+          className={classNames(opened && 'opened')} >
             <div 
-                className={classNames("rounded-lg bg-transparent-white border border-transparent-white w-[90vw] max-w-[64rem] absolute left-1/2 -translate-x-1/2  flex flex-col items-start transition-[transform,opacity]",
-                opened && "-translate-y-[2.4rem] opacity-100",
+                className={classNames("rounded-lg bg-transparent-white border border-transparent-white w-[90vw] max-w-[64rem] absolute left-[calc(50%+7.5rem)] md:left-1/2 -translate-x-1/2 flex flex-col items-start transition-[transform,opacity] shadow-[rgb(0_0_0_/_35%)_0px_7px_32px]",
+                opened && "translate-y-[12.8rem] md:translate-y-[2.4rem] opacity-100",
                 !opened && 'translate-y-[12.8rem] opacity-60'
                 )}
             >
@@ -99,9 +102,15 @@ export const CommandMenu = () => {
                         currentOptions.map(({label, icon: Icon, ...menuItem}, index) => (
                             <button
                                 key={label}
-                                className="px-5 flex h-[4.6rem] items-center hover:bg-white/[0.005] w-full command-button gap-3"
-                                onClick={() =>{
-                                    setSelectedOption('subOptions' in menuItem? index: null)
+                                className="px-5 flex h-[4.6rem] items-center hover:bg-white/[0.005] w-full command-button gap-3 first:bg-white/[0.15]"
+                                onClick={(ev) =>{
+                                  const clickedRootItem = "subOptions" in menuItem
+                                    setSelectedOption(clickedRootItem ? index: null);
+                                    if(!clickedRootItem) {
+                                      setOpened(false);
+                                      // stop propagation to prevent the click event from triggering toggleCommandMenu.
+                                      ev.stopPropagation();
+                                    }
                                 }}
                             >
                                 <Icon />
