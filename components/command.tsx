@@ -3,92 +3,47 @@ import classNames from "classnames";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AddLabels, AssignToIcon, BacklogIcon, ChangePriorityIcon, ChangeStatusIcon, DoneIcon, HighIcon, InProgressIcon, LabelIcon, LowIcon, MediumIcon, NoPriorityIcon, PersonIcon, TodoIcon, UrgentIcon } from "./icons/command";
 
-const commandOptions =[
+const commandOptions = [
     {
-        label: "Assign to...",
-        icon: AssignToIcon,
-        subOptions:[
-            {
-                label: 'lye',
-                icon: PersonIcon
-            },
-            {
-                label: 'Clementine',
-                icon: PersonIcon
-            },
-            {
-                label: 'Ayle',
-                icon: PersonIcon 
-            }
-        ],
+      label: "Assign to..",
+      icon: AssignToIcon,
+      subOptions: [
+        { label: "lye", icon: PersonIcon },
+        { label: "Hayley", icon: PersonIcon },
+        { label: "Ayle", icon: PersonIcon },
+      ],
     },
     {
-        label: "Change status...",
-        icon: ChangeStatusIcon,
-        subOptions:[
-            {
-                label: 'Backlog',
-                icon: BacklogIcon
-            },
-            {
-                label: 'Todo',
-                icon: TodoIcon
-            },
-            {
-                label: 'In Progress',
-                icon: InProgressIcon
-            },
-            {
-                label: 'Done',
-                icon: DoneIcon
-            }
-        ],
+      label: "Change status...",
+      icon: ChangeStatusIcon,
+      subOptions: [
+        { label: "Backlog", icon: BacklogIcon },
+        { label: "Todo", icon: TodoIcon },
+        { label: "In Progress", icon: InProgressIcon },
+        { label: "Done", icon: DoneIcon },
+      ],
     },
     {
-        label: "Change priority...",
-        icon: ChangePriorityIcon,
-        subOptions:[
-            {
-                label: 'No priority',
-                icon:  NoPriorityIcon
-            },
-            {
-                label: 'Urgent',
-                icon: UrgentIcon
-            },
-            {
-                label: 'High',
-                icon: HighIcon 
-            },
-            {
-                label: 'Medium',
-                icon: MediumIcon
-            },
-            {
-                label: 'Low',
-                icon: LowIcon 
-            }
-        ],
+      label: "Change priority...",
+      icon: ChangePriorityIcon,
+      subOptions: [
+        { label: "No priority", icon: NoPriorityIcon },
+        { label: "Urgent", icon: UrgentIcon },
+        { label: "High", icon: HighIcon },
+        { label: "Medium", icon: MediumIcon },
+        { label: "Low", icon: LowIcon },
+      ],
     },
     {
-        label: "Add labels...",
-        icon: AddLabels,
-        subOptions:[
-            {
-                label: 'Bug',
-                icon: <LabelIcon type="bug"/>
-            },
-            {
-                label: 'Feature',
-                icon: <LabelIcon type="feature"/>
-            },
-            {
-                label: 'Improvement',
-                icon: <LabelIcon type="improvement" /> 
-            }
-        ],
+      label: "Add labels...",
+      icon: AddLabels,
+      subOptions: [
+        { label: "Bug", icon: () => <LabelIcon type="bug" /> },
+        { label: "Feature", icon: () => <LabelIcon type="feature" /> },
+        { label: "Improvement", icon: () => <LabelIcon type="improvement" /> },
+      ],
     },
-] as const;
+  ] as const;
 
 export const CommandMenu = () => {
 
@@ -98,7 +53,10 @@ export const CommandMenu = () => {
 
     useEffect(()=>{
         const toggleCommandMenu = (e:MouseEvent) =>{
-            const clickedOutside = !commandMenuRef.current?.contains(e.target as Node)
+            if(!commandMenuRef.current) return;
+            const isMenuButton = e.target instanceof Element && e.target.classList.contains("command-button")
+            const clickedOutside = !isMenuButton && !commandMenuRef.current?.contains(e.target as Node)
+
             setOpened(clickedOutside? false: true)
         };
 
@@ -109,7 +67,7 @@ export const CommandMenu = () => {
         }
     },[])
 
-    const currentOtipns = useMemo(() => {
+    const currentOptions = useMemo(() => {
         const options = selectedOption === null ? commandOptions : commandOptions[selectedOption].subOptions;
         return options;
     },[selectedOption]);
@@ -131,16 +89,16 @@ export const CommandMenu = () => {
             />
             <div className="flex flex-col text-sm text-off-white w-full">
                 {
-                    commandOptions.map(({label, icon: Icon, subOptions}, index) => (
+                    currentOptions.map(({label, icon: Icon, ...menuItem}, index) => (
                         <button
                             key={label}
-                            className="px-5 flex h-[4.6rem] items-center hover:bg-white/[0.005] w-full"
+                            className="px-5 flex h-[4.6rem] items-center hover:bg-white/[0.005] w-full command-button gap-3"
                             onClick={() =>{
-                                setSelectedOption(subOptions? index: null)
+                                setSelectedOption('subOptions' in menuItem? index: null)
                             }}
                         >
                             <Icon />
-                            <span className="ml-3">{label}</span>
+                            {label}
                         </button>
                     ))
                 }
