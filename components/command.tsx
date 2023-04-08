@@ -1,6 +1,6 @@
 "use client"
 import classNames from "classnames";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { AddLabels, AssignToIcon, BacklogIcon, ChangePriorityIcon, ChangeStatusIcon, DoneIcon, HighIcon, InProgressIcon, LabelIcon, LowIcon, MediumIcon, NoPriorityIcon, PersonIcon, TodoIcon, UrgentIcon } from "./icons/command";
 
 const commandOptions =[
@@ -88,12 +88,13 @@ const commandOptions =[
             }
         ],
     },
-];
+] as const;
 
 export const CommandMenu = () => {
 
     const commandMenuRef = useRef<HTMLDivElement>(null)
     const [opened, setOpened] = useState(false);
+    const [selectedOption, setSelectedOption] = useState<number | null>(null);
 
     useEffect(()=>{
         const toggleCommandMenu = (e:MouseEvent) =>{
@@ -107,6 +108,12 @@ export const CommandMenu = () => {
             window.removeEventListener('click',toggleCommandMenu);
         }
     },[])
+
+    const currentOtipns = useMemo(() => {
+        const options = selectedOption === null ? commandOptions : commandOptions[selectedOption].subOptions;
+        return options;
+    },[selectedOption]);
+
     return (
         <div 
             ref={commandMenuRef}
@@ -124,10 +131,14 @@ export const CommandMenu = () => {
             />
             <div className="flex flex-col text-sm text-off-white w-full">
                 {
-                    commandOptions.map(({label, icon: Icon}) => (
+                    commandOptions.map(({label, icon: Icon, subOptions}, index) => (
                         <button
                             key={label}
-                            className="px-5 flex h-[4.6rem] items-center hover:bg-white/[0.005] w-full">
+                            className="px-5 flex h-[4.6rem] items-center hover:bg-white/[0.005] w-full"
+                            onClick={() =>{
+                                setSelectedOption(subOptions? index: null)
+                            }}
+                        >
                             <Icon />
                             <span className="ml-3">{label}</span>
                         </button>
