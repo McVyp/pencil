@@ -50,6 +50,7 @@ export const CommandMenu = () => {
     const commandMenuRef = useRef<HTMLDivElement>(null)
     const [opened, setOpened] = useState(false);
     const [selectedOption, setSelectedOption] = useState<number | null>(null);
+    const [searchValue, setSearchValue] = useState("");
 
     useEffect(()=>{
         const toggleCommandMenu = (e:MouseEvent) =>{
@@ -70,8 +71,13 @@ export const CommandMenu = () => {
 
     const currentOptions = useMemo(() => {
         const options = selectedOption === null ? commandOptions : commandOptions[selectedOption].subOptions;
-        return options;
-    },[selectedOption]);
+        
+        if(searchValue==="") return options;
+
+        return [...options].filter((option) => 
+          option.label.toLowerCase().includes(searchValue.toLowerCase())
+        )
+    },[selectedOption,searchValue]);
 
     useEffect(()=>{
         if(!commandMenuRef.current) return;
@@ -95,7 +101,9 @@ export const CommandMenu = () => {
                 </span>
                 <input 
                     className="text-lg bg-transparent p-5 w-full outline-none" 
-                    placeholder="Type a command or search..." 
+                    placeholder="Type a command or search..."
+                    value={searchValue}
+                    onChange={(ev) => setSearchValue(ev.target.value)}
                 />
                 <div className="flex flex-col text-sm text-off-white w-full">
                     {
