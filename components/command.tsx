@@ -72,36 +72,44 @@ export const CommandMenu = () => {
         return options;
     },[selectedOption]);
 
+    useEffect(()=>{
+        if(!commandMenuRef.current) return;
+        commandMenuRef.current.classList.remove('animate-bounce');
+        commandMenuRef.current.clientWidth;
+        commandMenuRef.current.classList.add('animate-bounce');
+    },[selectedOption]);
+
     return (
-        <div 
-            ref={commandMenuRef}
-            className={classNames("rounded-lg bg-transparent-white border border-transparent-white w-[90vw] max-w-[64rem] absolute left-1/2 -translate-x-1/2  flex flex-col items-start transition-[transform,opacity]",
-            opened && "-translate-y-[2.4rem] opacity-100 opened",
-            !opened && 'translate-y-[12.8rem] opacity-60'
-            )}
-        >
-            <span className="bg-white/[0.05] text-xs px-2 leading-10 text-white/50 ml-4 mt-2">
-                LIN-111 Walkway lightning
-            </span>
-            <input 
-                className="text-lg bg-transparent p-5 w-full outline-none" 
-                placeholder="Type a command or search..." 
-            />
-            <div className="flex flex-col text-sm text-off-white w-full">
-                {
-                    currentOptions.map(({label, icon: Icon, ...menuItem}, index) => (
-                        <button
-                            key={label}
-                            className="px-5 flex h-[4.6rem] items-center hover:bg-white/[0.005] w-full command-button gap-3"
-                            onClick={() =>{
-                                setSelectedOption('subOptions' in menuItem? index: null)
-                            }}
-                        >
-                            <Icon />
-                            {label}
-                        </button>
-                    ))
-                }
+        <div className={classNames(opened && 'opened')} ref={commandMenuRef}>
+            <div 
+                className={classNames("rounded-lg bg-transparent-white border border-transparent-white w-[90vw] max-w-[64rem] absolute left-1/2 -translate-x-1/2  flex flex-col items-start transition-[transform,opacity]",
+                opened && "-translate-y-[2.4rem] opacity-100",
+                !opened && 'translate-y-[12.8rem] opacity-60'
+                )}
+            >
+                <span className="bg-white/[0.05] text-xs px-2 leading-10 text-white/50 ml-4 mt-2">
+                    LIN-111 Walkway lightning
+                </span>
+                <input 
+                    className="text-lg bg-transparent p-5 w-full outline-none" 
+                    placeholder="Type a command or search..." 
+                />
+                <div className="flex flex-col text-sm text-off-white w-full">
+                    {
+                        currentOptions.map(({label, icon: Icon, ...menuItem}, index) => (
+                            <button
+                                key={label}
+                                className="px-5 flex h-[4.6rem] items-center hover:bg-white/[0.005] w-full command-button gap-3"
+                                onClick={() =>{
+                                    setSelectedOption('subOptions' in menuItem? index: null)
+                                }}
+                            >
+                                <Icon />
+                                {label}
+                            </button>
+                        ))
+                    }
+                </div>
             </div>
         </div>
  )
