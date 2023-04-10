@@ -46,7 +46,7 @@ export const IssueTracking = () => {
                 },
                 ]}
             />
-            <Features.Cards 
+            {/* <Features.Cards 
                 features={[
                     {
                         image: "/img/card-board.webp",
@@ -60,7 +60,7 @@ export const IssueTracking = () => {
                         text: "Quickly apply filters and operators to refine your issue lists and create custom views.",
                     },
                 ]}
-            />
+            /> */}
         </Features>
     )
 }

@@ -32,7 +32,8 @@ const MainFeature =({image, text}: MainFeatureProps) => {
                     alt=""
                 />
             </div>
-            <p className="text-white text-4xl mt-16 w-[80%] mx-auto">{text}</p>
+            <p className="text-white md:text-4xl my-16 w-[80%] mx-auto leading-tight text-2xl">{text}</p>
+            <hr className="mb-[7.2rem] h-[1px] border-none bg-[linear-gradient(to_right,transparent,rgba(255,255,255,0.1)_50%,transparent)]" />
         </div>
     )
 }
