@@ -4,6 +4,7 @@ import Container from "../components/container";
 import { StarsIllustration } from "../components/icons/stars";
 import { UnlikeAnyTool } from "../components/sections/any-tool";
 import { HomepageHero } from "../components/sections/home-age-hero";
+import { IssueTracking } from "../components/sections/issue-tracking";
 
 export default function Homepage() {
   return (
@@ -25,6 +26,7 @@ export default function Homepage() {
           <StarsIllustration />
       </div>
       <UnlikeAnyTool />
+      <IssueTracking />
     </>
   )
 }
