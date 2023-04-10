@@ -18,19 +18,19 @@ type MainFeatureProps ={
 }
 
 const MainFeature =({image, text}: MainFeatureProps) => {
-    return <div>Big image</div>
+    return <div>{image}</div>
 }
 
 type FeatureGridProps = {
     features: {
-        icon: React.ReactNode,
+        icon: React.FC,
         title: string,
         text: string,
     }[];
 }
 
 const FeatureGrid = ({features}: FeatureGridProps) => {
-    return <div>Feature grid.</div>
+    return <div></div>
 }
 
 
