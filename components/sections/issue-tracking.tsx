@@ -2,7 +2,12 @@ import { Features } from "../features"
 import { AutomatedBacklogIcon, CustomViewsIcon, DiscussionIcon, IssuesIcon, ParentSubIcon, WorkflowsIcon } from "../icons/features"
 export const IssueTracking = () => {
     return (
-        <Features title="Issue tracking you'll enjoy using">
+        <Features>
+            <Features.Title>
+                Issue tracking
+                <br />
+                you&apos;ll enjoy using
+            </Features.Title>
             <Features.Main 
                 text="Create tasks in seconds, discuss issues in context, and breeze through your work in views tailored to you and your team."
                 image="/img/issue.webp" 
@@ -43,16 +48,17 @@ export const IssueTracking = () => {
             />
             <Features.Cards 
                 features={[
-                            {
-                              image: "/img/card-board.webp",
-                              title: "List and board",
-                              text: "Switch between list and board layout to view work from any angle.",
-                            },
-                            {
-                              image: "/img/card-views.webp",
-                              title: "Make it yours",
-                              text: "Quickly apply filters and operators to refine your issue lists and create custom views.",
-                            },
+                    {
+                        image: "/img/card-board.webp",
+                        title: "List and board",
+                        text: "Switch between list and boarlayout to view work from any angle.",
+                    },
+
+                    {
+                        image: "/img/card-views.webp",
+                        title: "Make it yours",
+                        text: "Quickly apply filters and operators to refine your issue lists and create custom views.",
+                    },
                 ]}
             />
         </Features>

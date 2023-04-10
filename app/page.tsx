@@ -26,7 +26,9 @@ export default function Homepage() {
           <StarsIllustration />
       </div>
       <UnlikeAnyTool />
-      <IssueTracking />
+      {/* <Container className="my-[25.2rem]">
+        <IssueTracking />
+      </Container> */}
     </>
   )
 }

@@ -1,16 +1,22 @@
 type FeaturesProps ={
-    title: string;
     children: React.ReactNode;
 }
 
-export const Features = ({title, children}: FeaturesProps) =>{
+export const Features = ({children}: FeaturesProps) =>{
     return(
-        <section>
-            <h2>{title}</h2>
+        <section className="py-[12.8rem] flex items-center flex-col text-center">
             {children}
         </section>
     )
 }
+
+type FeaturesTitleProps ={
+    children: React.ReactNode;
+}
+
+const FeaturesTitle =( {children}: FeaturesTitleProps) =>(
+     <h2 className="text-gradient text-6xl md:text-8xl mb-11">{children}</h2>
+)
 
 type MainFeatureProps ={
     image: string;
@@ -18,7 +24,17 @@ type MainFeatureProps ={
 }
 
 const MainFeature =({image, text}: MainFeatureProps) => {
-    return <div>{image}</div>
+    return( 
+        <div className="w-[78rem] max-w-[90%] text-center">
+            <div >
+                <img 
+                    src={image} className="h-auto w-full" 
+                    alt=""
+                />
+            </div>
+            <p className="text-white text-4xl mt-16 w-[80%] mx-auto">{text}</p>
+        </div>
+    )
 }
 
 type FeatureGridProps = {
@@ -46,5 +62,6 @@ const FeatureCards =( {features}: FeatureCardsProps) =>{
 }
 
 Features.Main = MainFeature;
+Features.Title = FeaturesTitle;
 Features.Grid = FeatureGrid;
 Features.Cards = FeatureCards;
