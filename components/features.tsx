@@ -26,7 +26,7 @@ type MainFeatureProps ={
 const MainFeature =({image, text}: MainFeatureProps) => {
     return( 
         <div className="w-[78rem] max-w-[90%] text-center">
-            <div >
+            <div className="relative rounded-[14px] before:rounded-[inherit] before:p-[1px] before:absolute before:inset-0 before:bg-[linear-gradient(rgba(255,_255,_255,_0.3),_rgba(255,_255,_255,_0)_120%)] before:[mask:linear-gradient(black,_black)_content-box_content-box,_linear-gradient(black,_black)] before:[mask-composite:xor] after:bg-[rgba(255,_255,_255,_0.15)] after:absolute after:inset-0 after:rouned-[inherit] after:[mask:linear-gradient(black,transparent)]" >
                 <img 
                     src={image} className="h-auto w-full" 
                     alt=""
