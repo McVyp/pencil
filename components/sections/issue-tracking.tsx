@@ -2,7 +2,7 @@ import { Features } from "../features"
 import { AutomatedBacklogIcon, CustomViewsIcon, DiscussionIcon, IssuesIcon, ParentSubIcon, WorkflowsIcon } from "../icons/features"
 export const IssueTracking = () => {
     return (
-        <Features>
+        <Features color="194,97,254">
             <Features.Title>
                 Issue tracking
                 <br />
@@ -46,21 +46,23 @@ export const IssueTracking = () => {
                 },
                 ]}
             />
-            {/* <Features.Cards 
+            <Features.Cards 
                 features={[
                     {
                         image: "/img/card-board.webp",
                         title: "List and board",
                         text: "Switch between list and boarlayout to view work from any angle.",
+                        imageClassName:"top-[40%] w-[200%]"
                     },
 
                     {
                         image: "/img/card-views.webp",
                         title: "Make it yours",
                         text: "Quickly apply filters and operators to refine your issue lists and create custom views.",
+                        imageClassName:"top-[34%] left-[24px] w-[110%]"
                     },
                 ]}
-            /> */}
+            />
         </Features>
     )
 }

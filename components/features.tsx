@@ -1,10 +1,13 @@
+import classNames from "classnames";
+
 type FeaturesProps ={
     children: React.ReactNode;
+    color: string
 }
 
-export const Features = ({children}: FeaturesProps) =>{
+export const Features = ({children, color}: FeaturesProps) =>{
     return(
-        <section className="py-[12.8rem] flex items-center flex-col text-center">
+        <section className="py-[12.8rem] flex items-center flex-col text-center" style={{"--feature-color":color} as React.CSSProperties}>
             {children}
         </section>
     )
@@ -66,12 +69,30 @@ const FeatureGrid = ({features}: FeatureGridProps) => {
 type FeatureCardsProps ={
     features:{
         image: string;
+        imageClassName: string;
         title: string;
         text: string
     }[]
 }
 const FeatureCards =( {features}: FeatureCardsProps) =>{
-    return <div>Feature cards.</div>
+    return (
+        <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
+            {features.map(({title, text, image, imageClassName}) => (
+                <div 
+                    className="relative bg-[radial-gradient(ellipse_at_center,rgba(var(--feature-color),0.15),transparent)] before:absolute before:inset-0 before:bg-glass-gradient rounded-[2.4rem] p-14  border border-transparent-white overflow-hidden aspect-[1.1/1]" 
+                    key={title}
+                >
+                    <h3 className="text-2xl text-white mb-2 text-left">{title}</h3>
+                    <p className="text-md text-primary-text max-w-[31rem] text-left">{text}</p>
+                    <img 
+                        src={image} 
+                        alt=""
+                        className={classNames("absolute max-w-none" ,imageClassName)}
+                    />
+                </div>
+            ))}
+        </div>
+    )
 }
 
 Features.Main = MainFeature;
