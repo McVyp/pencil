@@ -47,7 +47,19 @@ type FeatureGridProps = {
 }
 
 const FeatureGrid = ({features}: FeatureGridProps) => {
-    return <div></div>
+    return (
+        <div className="text-md text-primary-text grid grid-cols-3 w-full gap-y-9 mb-[14rem]">
+            {features.map(({title, text, icon:Icon}) => (
+                <div 
+                    className="max-w-[25.6rem] [&_svg]:inline [&_svg]:fill-white [&_svg]:mr-[6px] [&_svg]:mb-[2px]" 
+                    key={title}
+                >
+                    <Icon />
+                    <span className="text-white">{title}</span>{" "}{text}
+                </div>
+            ))}
+        </div>
+    )
 }
 
 
