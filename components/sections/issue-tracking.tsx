@@ -3,12 +3,14 @@ import { AutomatedBacklogIcon, CustomViewsIcon, DiscussionIcon, IssuesIcon, Pare
 export const IssueTracking = () => {
     return (
         <Features color="194,97,254">
-            <Features.Title>
-                Issue tracking
-                <br />
-                you&apos;ll enjoy using
-            </Features.Title>
-            <Features.Main 
+            <Features.Main
+                title={
+                    <>
+                        Issue tracking
+                        <br />
+                        you&apos;ll enjoy using
+                    </>
+                }
                 text="Create tasks in seconds, discuss issues in context, and breeze through your work in views tailored to you and your team."
                 image="/img/issue.webp" 
             />
