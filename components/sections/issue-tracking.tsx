@@ -2,7 +2,7 @@ import { Features } from "../features"
 import { AutomatedBacklogIcon, CustomViewsIcon, DiscussionIcon, IssuesIcon, ParentSubIcon, WorkflowsIcon } from "../icons/features"
 export const IssueTracking = () => {
     return (
-        <Features color="194,97,254">
+        <Features color="194,97,254" colorDark="53,43,79">
             <Features.Main
                 title={
                     <>
