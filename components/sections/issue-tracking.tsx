@@ -1,3 +1,4 @@
+"use client"
 import { Features } from "../features"
 import { AutomatedBacklogIcon, CustomViewsIcon, DiscussionIcon, IssuesIcon, ParentSubIcon, WorkflowsIcon } from "../icons/features"
 export const IssueTracking = () => {
