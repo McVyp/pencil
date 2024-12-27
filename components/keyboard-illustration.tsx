@@ -18,7 +18,7 @@ const shortcuts = [
   { text: "Move to project", keys: "⇧p" },
 ];
 
-export const KeyboardShortcuts = () => {
+export const Keyboard = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const illustrationWrapperRef = useRef<HTMLDivElement>(null);
   const activeShortcutIndex = useRef(0);
