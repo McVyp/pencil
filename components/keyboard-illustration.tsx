@@ -23,9 +23,15 @@ export const Keyboard = () => {
   const illustrationWrapperRef = useRef<HTMLDivElement>(null);
   const activeShortcutIndex = useRef(0);
   const timeoutRef = useRef<NodeJS.Timeout>();
+  const isTimeoutActive = useRef(false);
 
   const scheduleTimeout = () => {
-    timeoutRef.current = setTimeout(goToNextShortcut, 2500);
+  if (isTimeoutActive.current) return;
+  isTimeoutActive.current = true;
+  timeoutRef.current = setTimeout(() => {
+    goToNextShortcut();
+    isTimeoutActive.current = false;
+  }, 2500);
   };
 
   useEffect(() => {
